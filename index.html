@@ -365,12 +365,12 @@
             height: 100%;
         }
 
-        /* Contenitore e fusione perfetta dell'immagine a colori */
+        /* Contenitore e fusione corretta dell'immagine a colori (senza tagli su PC) */
         .image-blend-container {
             position: relative;
             width: 100%;
             max-width: 100%;
-            height: 160px;
+            height: 180px;
             border-radius: 10px;
             overflow: hidden;
             background: #121816;
@@ -384,13 +384,11 @@
         .image-blend-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Evita il taglio dell'immagine su PC */
             display: block;
-            /* Mantiene i colori originali al 100% (nessun bianco e nero) */
-            filter: none; 
-            /* Sfuma i bordi esterni per fonderli completamente con il box scuro di sfondo */
-            -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
-            mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+            filter: none; /* Mantiene i colori originali al 100% */
+            -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%);
+            mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%);
         }
 
         .crowd-stats-row {
@@ -611,6 +609,7 @@
             transform: translateY(100%);
             opacity: 0;
             pointer-events: none;
+            display: none !important; /* Forza la scomparsa immediata */
         }
         .cookie-content {
             max-width: 1300px;
@@ -746,7 +745,7 @@
                 grid-column: span 2;
             }
             .image-blend-container {
-                height: 130px;
+                height: 150px;
             }
         }
     </style>
@@ -1160,7 +1159,7 @@
 
         document.getElementById('lang-select').addEventListener('change', (e) => changeLanguage(e.target.value));
 
-        // Logica Gestione Cookie Banner
+        // Logica Gestione Cookie Banner corretta e immediata
         const cookieBanner = document.getElementById('cookie-banner');
         const acceptBtn = document.getElementById('cookie-accept-btn');
         const rejectBtn = document.getElementById('cookie-reject-btn');
