@@ -372,7 +372,7 @@
             overflow: hidden;
         }
 
-        /* SFONDO DINAMICO + FOTO INTERA NON TAGLIATA E FUSIONE PERFETTA */
+        /* IMMAGINE CENTRALE A TUTTO CAMPO E FUSA CON LO SFONDO */
         .image-blend-container {
             position: relative;
             width: 100%;
@@ -387,33 +387,16 @@
             border: 1px solid #2d4238;
         }
 
-        /* Riempimento automatico degli spazi laterali vuoti con la stessa foto sfocata e scura */
-        .image-bg-blur {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('Cattura.JPG');
-            background-size: cover;
-            background-position: center;
-            filter: blur(12px) brightness(0.35);
-            transform: scale(1.1);
-            z-index: 1;
-        }
-
-        /* Foto principale interamente visibile, centrata, senza tagli e con bordi sfumati */
+        /* Immagine coperta interamente per eliminare i vuoti laterali e sfumata sui bordi */
         .image-blend-container img {
             position: relative;
             z-index: 2;
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
+            width: 100%;
             height: 100%;
-            object-fit: contain; 
+            object-fit: cover; 
             display: block;
-            mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%);
-            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%);
+            mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
             transition: transform 0.5s ease;
         }
 
@@ -846,9 +829,7 @@
             <!-- Colonna Centrale -->
             <section class="center-stage" aria-label="Supporto e CrowdFunding">
                 <div class="image-blend-container">
-                    <!-- Sfondo per riempire i lati senza tagliare la foto principale -->
-                    <div class="image-bg-blur"></div>
-                    <!-- Foto principale interamente visibile -->
+                    <!-- Immagine centrale senza spazi laterali e con bordi sfumati/fusi nello sfondo -->
                     <img src="Cattura.JPG" alt="Prototipo imballaggio smart e su misura ECO-PAK">
                 </div>
                 
