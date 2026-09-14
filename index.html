@@ -56,6 +56,7 @@
             background-color: #121816;
             color: #e0e6e2;
             overflow-x: hidden;
+            font-size: 16px; /* Font leggermente aumentato */
         }
 
         .container {
@@ -64,7 +65,7 @@
             min-height: 100dvh;
             display: grid;
             grid-template-rows: auto 1fr auto;
-            padding: 10px 15px;
+            padding: 12px 18px;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -74,15 +75,15 @@
             grid-template-columns: 1fr auto 1fr;
             align-items: center;
             border-bottom: 1px solid #2d4238;
-            padding-bottom: 8px;
-            margin-bottom: 8px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
             gap: 15px;
         }
 
         .header-left-group {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             justify-self: flex-start;
             flex-wrap: wrap;
         }
@@ -91,8 +92,8 @@
             background: linear-gradient(135deg, #2ecc71, #27ae60);
             color: #121816;
             border: 2px solid #58d68d;
-            padding: 6px 12px;
-            font-size: 0.75rem;
+            padding: 8px 14px;
+            font-size: 0.85rem;
             font-weight: 900;
             text-decoration: none;
             border-radius: 20px;
@@ -106,7 +107,7 @@
             cursor: pointer;
         }
         .chat-icon-pulse {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             animation: icon-bounce 1s infinite alternate;
         }
         @keyframes button-pop {
@@ -123,8 +124,8 @@
             background: #1b2622;
             color: #2ecc71;
             border: 1px solid #2d4238;
-            padding: 6px 10px;
-            font-size: 0.75rem;
+            padding: 8px 12px;
+            font-size: 0.85rem;
             font-weight: 700;
             border-radius: 20px;
             outline: none;
@@ -136,8 +137,8 @@
             background: #1b2622;
             color: #2ecc71;
             border: 1px solid #2d4238;
-            padding: 6px 10px;
-            font-size: 0.75rem;
+            padding: 8px 12px;
+            font-size: 0.85rem;
             font-weight: 800;
             border-radius: 20px;
             display: flex;
@@ -149,11 +150,11 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             background: rgba(46, 204, 113, 0.15);
             border-radius: 50%;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
         }
 
         .header-center {
@@ -161,53 +162,53 @@
             justify-self: center;
         }
         .header-center h1 {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: #2ecc71;
             text-transform: uppercase;
             letter-spacing: 1px;
             text-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
         }
         .header-center p {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             color: #95a5a6;
         }
 
         .header-live-stats {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             justify-self: flex-end;
         }
         .header-stat-box {
             background: #1b2622;
             border: 1px solid #2d4238;
-            padding: 4px 8px;
+            padding: 6px 10px;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
         }
         .header-stat-title {
-            font-size: 0.6rem;
+            font-size: 0.7rem;
             color: #95a5a6;
             text-transform: uppercase;
         }
         .header-stat-value {
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 800;
         }
 
         .main-grid {
             display: grid;
-            grid-template-columns: 1fr 1.3fr 1fr;
-            gap: 12px;
+            grid-template-columns: 1.2fr 1.3fr 1fr;
+            gap: 15px;
             align-items: stretch;
-            margin: 8px 0;
+            margin: 10px 0;
         }
         
         .card {
             background: #1b2622;
             border: 1px solid #2d4238;
-            padding: 10px;
+            padding: 14px;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             display: flex;
@@ -221,31 +222,31 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #2ecc71;
-            padding-bottom: 4px;
-            margin-bottom: 6px;
+            padding-bottom: 6px;
+            margin-bottom: 10px;
             flex-shrink: 0;
         }
         .card-header-live h2 {
             color: #2ecc71;
-            font-size: 0.9rem;
+            font-size: 1.05rem;
             margin: 0;
         }
         .live-badge {
             display: flex;
             align-items: center;
             gap: 4px;
-            font-size: 0.65rem;
+            font-size: 0.75rem;
             color: #2ecc71;
             font-weight: bold;
             text-transform: uppercase;
             background: rgba(46, 204, 113, 0.1);
-            padding: 2px 6px;
+            padding: 3px 8px;
             border-radius: 10px;
             border: 1px solid rgba(46, 204, 113, 0.3);
         }
         .live-dot {
-            width: 5px;
-            height: 5px;
+            width: 6px;
+            height: 6px;
             background-color: #2ecc71;
             border-radius: 50%;
             box-shadow: 0 0 6px #2ecc71;
@@ -262,13 +263,13 @@
             flex-direction: column;
             justify-content: space-between;
             flex-grow: 1;
-            gap: 6px;
+            gap: 8px;
         }
         .digi-card {
             background: #121816;
             border: 1px solid #2d4238;
             border-radius: 8px;
-            padding: 7px 10px;
+            padding: 9px 12px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -283,7 +284,7 @@
             left: 0;
             top: 0;
             height: 100%;
-            width: 3px;
+            width: 4px;
         }
         .border-red::before { background: #e74c3c; }
         .border-orange::before { background: #f39c12; }
@@ -295,40 +296,40 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.7rem;
+            font-size: 0.82rem;
             font-weight: bold;
             color: #ffffff;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
         .digi-title-group {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
         .digi-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 5px;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
         }
         
         .comparison-metric {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
         }
         .digi-value {
-            font-size: 0.78rem;
+            font-size: 0.88rem;
             font-weight: 800;
         }
         .vs-badge {
-            font-size: 0.58rem;
-            padding: 1px 4px;
+            font-size: 0.65rem;
+            padding: 2px 5px;
             border-radius: 4px;
             font-weight: 700;
             text-transform: uppercase;
@@ -341,7 +342,7 @@
         .vs-negative {
             background: rgba(231, 76, 60, 0.2);
             color: #e74c3c;
-            border: 1px solid rgba(231, 76, 60, 0.4);
+            border: 1px solid rgba(231, 76, 60, 0.2);
         }
         .vs-neutral {
             background: rgba(243, 156, 18, 0.2);
@@ -350,9 +351,9 @@
         }
 
         .digi-desc {
-            font-size: 0.63rem;
+            font-size: 0.75rem;
             color: #95a5a6;
-            line-height: 1.2;
+            line-height: 1.3;
         }
 
         .center-stage {
@@ -361,7 +362,7 @@
             align-items: center;
             justify-content: space-between;
             text-align: center;
-            gap: 8px;
+            gap: 10px;
             height: 100%;
         }
 
@@ -384,7 +385,6 @@
             height: 100%;
             object-fit: contain;
             display: block;
-            /* Maschera di dissolvenza totale sui lati e bordi tramite trasparenza */
             -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 85%);
             mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 85%);
         }
@@ -392,13 +392,13 @@
         .crowd-stats-row {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             width: 100%;
         }
         .crowd-stats {
             background: linear-gradient(145deg, #1b2622, #141d1a);
             border: 1px solid #2d4238;
-            padding: 8px 12px;
+            padding: 10px 14px;
             border-radius: 10px;
             flex: 1;
             box-shadow: 0 6px 15px rgba(0,0,0,0.4);
@@ -419,12 +419,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .stats-left-group {
             display: flex;
             flex-direction: column;
-            gap: 1px;
+            gap: 2px;
         }
         .stats-label-wrapper {
             display: flex;
@@ -432,29 +432,29 @@
             gap: 6px;
         }
         .stats-label {
-            font-size: 0.65rem;
+            font-size: 0.75rem;
             color: #95a5a6;
             text-transform: uppercase;
             font-weight: 700;
         }
         .stats-main-text {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 900;
             color: #ffffff;
         }
         .raised-percentage {
             color: #2ecc71;
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             font-weight: 900;
             background: rgba(46, 204, 113, 0.15);
-            padding: 2px 6px;
+            padding: 3px 8px;
             border-radius: 8px;
             border: 1px solid rgba(46, 204, 113, 0.4);
         }
         .progress-bar-container {
             background: #121816;
             border-radius: 6px;
-            height: 7px;
+            height: 8px;
             width: 100%;
             overflow: hidden;
             border: 1px solid rgba(45, 66, 56, 0.9);
@@ -469,8 +469,8 @@
         .crowdfund-btn {
             background: linear-gradient(135deg, #2ecc71, #27ae60);
             color: #121816;
-            padding: 12px 14px;
-            font-size: 0.8rem;
+            padding: 14px 16px;
+            font-size: 0.88rem;
             font-weight: 900;
             text-decoration: none;
             border-radius: 10px;
@@ -488,31 +488,31 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
             text-align: left;
         }
         .review-box {
             background: #1b2622;
             border: 1px solid #2d4238;
-            padding: 6px 8px;
+            padding: 8px 10px;
             border-radius: 8px;
         }
         .review-box h4 {
-            font-size: 0.7rem;
+            font-size: 0.78rem;
             color: #2ecc71;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
         .review-form {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 6px;
         }
         .review-input {
             background: #121816;
             border: 1px solid #2d4238;
             color: #fff;
-            padding: 4px 6px;
-            font-size: 0.68rem;
+            padding: 6px 8px;
+            font-size: 0.75rem;
             border-radius: 4px;
             outline: none;
         }
@@ -526,16 +526,16 @@
             color: #f1c40f;
             border: 1px solid #2d4238;
             border-radius: 4px;
-            font-size: 0.65rem;
-            padding: 2px;
+            font-size: 0.72rem;
+            padding: 3px;
             outline: none;
         }
         .submit-review-btn {
             background: #2ecc71;
             color: #121816;
             border: none;
-            padding: 3px 10px;
-            font-size: 0.65rem;
+            padding: 4px 12px;
+            font-size: 0.72rem;
             font-weight: bold;
             border-radius: 4px;
             cursor: pointer;
@@ -545,32 +545,32 @@
         .history-box {
             background: #1b2622;
             border: 1px solid #2d4238;
-            padding: 6px 8px;
+            padding: 8px 10px;
             border-radius: 8px;
-            max-height: 90px;
+            max-height: 105px;
             overflow-y: auto;
         }
         .history-box h4 {
-            font-size: 0.7rem;
+            font-size: 0.78rem;
             color: #2ecc71;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             display: flex;
             justify-content: space-between;
         }
         .history-list {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 6px;
         }
         .history-item {
             background: #121816;
             border: 1px solid #2d4238;
-            padding: 4px 6px;
+            padding: 6px 8px;
             border-radius: 6px;
-            font-size: 0.62rem;
+            font-size: 0.7rem;
             display: flex;
             flex-direction: column;
-            gap: 1px;
+            gap: 2px;
         }
         .history-item-header {
             display: flex;
@@ -618,7 +618,7 @@
             flex-wrap: wrap;
         }
         .cookie-text {
-            font-size: 0.78rem;
+            font-size: 0.85rem;
             color: #cbd5e1;
             line-height: 1.4;
             flex: 1;
@@ -635,7 +635,7 @@
         }
         .cookie-btn {
             padding: 8px 16px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 800;
             border-radius: 8px;
             cursor: pointer;
@@ -664,9 +664,9 @@
 
         footer {
             text-align: center;
-            font-size: 0.68rem;
+            font-size: 0.75rem;
             color: #7f8c8d;
-            padding-top: 4px;
+            padding-top: 6px;
         }
 
         @media screen and (max-width: 1024px) {
@@ -790,66 +790,66 @@
         <main class="main-grid">
             
             <!-- Colonna Sinistra (Vantaggi Globali ECO-PAK) -->
-            <section class="card" aria-label="Vantaggi ECO-PAK">
+            <section class="card" aria-label="Vantaggi e Dati ECO-PAK">
                 <div class="card-header-live">
-                    <h2 id="txt-left-h2">Vantaggi ECO-PAK</h2>
+                    <h2 id="txt-left-h2">Vantaggi & Dati ECO-PAK</h2>
                     <div class="live-badge"><div class="live-dot"></div> LIVE</div>
                 </div>
                 
                 <div class="digital-cards-stack">
                     <article class="digi-card border-green">
                         <div class="digi-header">
-                            <div class="digi-title-group"><span class="digi-icon">💰</span><span id="txt-m1-title">Vantaggi Economici</span></div>
+                            <div class="digi-title-group"><span class="digi-icon">💰</span><span id="txt-v1-title">Vantaggi Economici</span></div>
                             <div class="comparison-metric">
                                 <span class="digi-value" style="color: #2ecc71;">-35.4% Spesa</span>
-                                <span class="vs-badge vs-positive">ECONOMICO</span>
+                                <span class="vs-badge vs-positive">ROI ALTO</span>
                             </div>
                         </div>
-                        <div class="digi-desc" id="txt-m1-desc">Riduzione drastica dei costi logistici, di imballaggio e di stoccaggio aziendale.</div>
+                        <div class="digi-desc" id="txt-v1-desc">Abbattimento dei costi di stoccaggio, gestione materiali di riempimento e minori spese di spedizione.</div>
                     </article>
 
                     <article class="digi-card border-blue">
                         <div class="digi-header">
-                            <div class="digi-title-group"><span class="digi-icon">📦</span><span id="txt-m2-title">Vantaggi Logistici</span></div>
+                            <div class="digi-title-group"><span class="digi-icon">🚚</span><span id="txt-v2-title">Vantaggi Logistici</span></div>
                             <div class="comparison-metric">
                                 <span class="digi-value" style="color: #3498db;">+45.0% Carico</span>
-                                <span class="vs-badge vs-positive">LOGISTICA</span>
+                                <span class="vs-badge vs-positive">EFFICIENZA</span>
                             </div>
                         </div>
-                        <div class="digi-desc" id="txt-m2-desc">Massima densità di stivaggio sui pallet e ottimizzazione dei flussi di magazzino.</div>
-                    </article>
-
-                    <article class="digi-card border-green">
-                        <div class="digi-header">
-                            <div class="digi-title-group"><span class="digi-icon">🌿</span><span id="txt-m3-title">Vantaggi Ambientali</span></div>
-                            <div class="comparison-metric">
-                                <span class="digi-value" style="color: #2ecc71;">0.00% Plastica</span>
-                                <span class="vs-badge vs-positive">GREEN</span>
-                            </div>
-                        </div>
-                        <div class="digi-desc" id="txt-m3-desc">100% compostabile, zero rilascio di microplastiche e -78.5% di consumo idrico.</div>
-                    </article>
-
-                    <article class="digi-card border-orange">
-                        <div class="digi-header">
-                            <div class="digi-title-group"><span class="digi-icon">🏗️</span><span id="txt-m4-title">Vantaggi Strutturali</span></div>
-                            <div class="comparison-metric">
-                                <span class="digi-value" style="color: #f39c12;">99.8% Test OK</span>
-                                <span class="vs-badge vs-neutral">STRUTTURALE</span>
-                            </div>
-                        </div>
-                        <div class="digi-desc" id="txt-m4-desc">Sagomatura su misura 1:1 e struttura intelligente anti-urto ad altissima resistenza.</div>
+                        <div class="digi-desc" id="txt-v2-desc">Ottimizzazione estrema dello spazio sui pallet, magazzini più liberi e cicli di evasione ordini più rapidi.</div>
                     </article>
 
                     <article class="digi-card border-purple">
                         <div class="digi-header">
-                            <div class="digi-title-group"><span class="digi-icon">🧠</span><span id="txt-m5-title">Efficienza dei Volumi</span></div>
+                            <div class="digi-title-group"><span class="digi-icon">🌍</span><span id="txt-v3-title">Vantaggi Ambientali</span></div>
                             <div class="comparison-metric">
-                                <span class="digi-value" style="color: #9b59b6;">0% Spreco Spazio</span>
-                                <span class="vs-badge vs-positive">SMART FIT</span>
+                                <span class="digi-value" style="color: #9b59b6;">100% Zero Microplastiche</span>
+                                <span class="vs-badge vs-positive">GREEN</span>
                             </div>
                         </div>
-                        <div class="digi-desc" id="txt-m5-desc">Algoritmo di calcolo automatico della geometria per un incastro perfetto e protettivo.</div>
+                        <div class="digi-desc" id="txt-v3-desc">Compostaggio rapido certificato, risparmio idrico del 78.5% e azzeramento dei rifiuti plastici dispersi.</div>
+                    </article>
+
+                    <article class="digi-card border-orange">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">🛡️</span><span id="txt-v4-title">Vantaggi Strutturali</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #f39c12;">Adattamento 1:1</span>
+                                <span class="vs-badge vs-neutral">SMART FIT</span>
+                            </div>
+                        </div>
+                        <div class="digi-desc" id="txt-v4-desc">Sagomatura su misura attorno all'articolo con protezione anti-urto avanzata che assorbe l'energia degli impatti.</div>
+                    </article>
+
+                    <article class="digi-card border-red">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">👥</span><span id="txt-v5-title">Audience & Aziende</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #e74c3c;">+12.5k Aziende</span>
+                                <span class="vs-badge vs-positive">TARGET B2B</span>
+                            </div>
+                        </div>
+                        <div class="digi-desc" id="txt-v5-desc">Forte interesse da parte di e-commerce, hub logistici globali e brand attenti alla sostenibilità e reputazione ESG.</div>
                     </article>
                 </div>
             </section>
@@ -866,7 +866,7 @@
                             <div class="stats-left-group">
                                 <div class="stats-label-wrapper">
                                     <span class="stats-label" id="txt-crowd-label">Fondi Raccolti / Obiettivo</span>
-                                    <div class="live-badge" style="padding: 1px 4px; font-size: 0.55rem;"><div class="live-dot"></div> LIVE</div>
+                                    <div class="live-badge" style="padding: 1px 4px; font-size: 0.6rem;"><div class="live-dot"></div> LIVE</div>
                                 </div>
                                 <span class="stats-main-text" id="txt-crowd-amount">37.000 € / 50.000 €</span>
                             </div>
@@ -900,7 +900,7 @@
                     </div>
 
                     <div class="history-box">
-                        <h4 id="txt-history-title">Storico Recensioni <span id="review-counter" style="color: #95a5a6; font-size: 0.6rem;">(0)</span></h4>
+                        <h4 id="txt-history-title">Storico Recensioni <span id="review-counter" style="color: #95a5a6; font-size: 0.65rem;">(0)</span></h4>
                         <div class="history-list" id="history-list-container"></div>
                     </div>
                 </div>
@@ -1015,12 +1015,12 @@
             it: {
                 chat: "Chat Live", greenBadge: "100% Smart & Green",
                 title: "ECO-PAK: Packaging Smart & Su Misura", subtitle: "La rivoluzione intelligente per la logistica",
-                stat1: "📦 Scatoli (Anno)", stat2: "☁️ CO2 Cartoni", leftH2: "Vantaggi ECO-PAK",
-                m1Title: "Vantaggi Economici", m1Desc: "Riduzione drastica dei costi logistici, di imballaggio e di stoccaggio aziendale.",
-                m2Title: "Vantaggi Logistici", m2Desc: "Massima densità di stivaggio sui pallet e ottimizzazione dei flussi di magazzino.",
-                m3Title: "Vantaggi Ambientali", m3Desc: "100% compostabile, zero rilascio di microplastiche e -78.5% di consumo idrico.",
-                m4Title: "Vantaggi Strutturali", m4Desc: "Sagomatura su misura 1:1 e struttura intelligente anti-urto ad altissima resistenza.",
-                m5Title: "Efficienza dei Volumi", m5Desc: "Algoritmo di calcolo automatico della geometria per un incastro perfetto e protettivo.",
+                stat1: "📦 Scatoli (Anno)", stat2: "☁️ CO2 Cartoni", leftH2: "Vantaggi & Dati ECO-PAK",
+                v1Title: "Vantaggi Economici", v1Desc: "Abbattimento dei costi di stoccaggio, gestione materiali di riempimento e minori spese di spedizione.",
+                v2Title: "Vantaggi Logistici", v2Desc: "Ottimizzazione estrema dello spazio sui pallet, magazzini più liberi e cicli di evasione ordini più rapidi.",
+                v3Title: "Vantaggi Ambientali", v3Desc: "Compostaggio rapido certificato, risparmio idrico del 78.5% e azzeramento dei rifiuti plastici dispersi.",
+                v4Title: "Vantaggi Strutturali", v4Desc: "Sagomatura su misura attorno all'articolo con protezione anti-urto avanzata che assorbe l'energia degli impatti.",
+                v5Title: "Audience & Aziende", v5Desc: "Forte interesse da parte di e-commerce, hub logistici globali e brand attenti alla sostenibilità e reputazione ESG.",
                 crowdLabel: "Fondi Raccolti / Obiettivo", supportBtn: "Sostieni ora",
                 revTitle: "Lascia una recensione sul progetto", revAuthorPlaceholder: "Il tuo nome o azienda...", revSubmit: "Invia",
                 historyTitle: "Storico Recensioni", rightH2: "Performance Smart & Su Misura",
@@ -1038,12 +1038,12 @@
             en: {
                 chat: "Live Chat", greenBadge: "100% Smart & Green",
                 title: "ECO-PAK: Smart & Custom Packaging", subtitle: "The intelligent revolution for logistics",
-                stat1: "📦 Boxes (Year)", stat2: "☁️ Carton CO2", leftH2: "ECO-PAK Advantages",
-                m1Title: "Economic Advantages", m1Desc: "Drastic reduction in logistics, packaging, and corporate storage costs.",
-                m2Title: "Logistics Advantages", m2Desc: "Maximum pallet storage density and optimization of warehouse flows.",
-                m3Title: "Environmental Advantages", m3Desc: "100% compostable, zero microplastics release, and -78.5% water consumption.",
-                m4Title: "Structural Advantages", m4Desc: "1% custom shaping and high-resistance intelligent shockproof structure.",
-                m5Title: "Volume Efficiency", m5Desc: "Automatic geometry calculation algorithm for a perfect and protective fit.",
+                stat1: "📦 Boxes (Year)", stat2: "☁️ Carton CO2", leftH2: "Benefits & ECO-PAK Data",
+                v1Title: "Economic Benefits", v1Desc: "Reduction of storage costs, filler material management, and lower shipping expenses.",
+                v2Title: "Logistical Benefits", v2Desc: "Extreme optimization of pallet space, freer warehouses, and faster order fulfillment cycles.",
+                v3Title: "Environmental Benefits", v3Desc: "Certified rapid composting, 78.5% water savings, and elimination of scattered plastic waste.",
+                v4Title: "Structural Benefits", v4Desc: "Custom shaping around the item with advanced shockproof protection absorbing impact energy.",
+                v5Title: "Audience & Companies", v5Desc: "Strong interest from e-commerce, global logistics hubs, and brands focused on sustainability and ESG reputation.",
                 crowdLabel: "Funds Raised / Goal", supportBtn: "Support Now",
                 revTitle: "Leave a project review", revAuthorPlaceholder: "Your name or company...", revSubmit: "Submit",
                 historyTitle: "Reviews History", rightH2: "Smart & Custom Performance",
@@ -1061,12 +1061,12 @@
             fr: {
                 chat: "Chat", greenBadge: "100% Smart & Green",
                 title: "ECO-PAK : Packaging Smart & Sur Mesure", subtitle: "La révolution intelligente pour la logistique",
-                stat1: "📦 Boîtes (Année)", stat2: "☁️ CO2 Carton", leftH2: "Avantages ECO-PAK",
-                m1Title: "Avantages Économiques", m1Desc: "Réduction drastique des coûts logistiques, d'emballage et de stockage.",
-                m2Title: "Avantages Logistiques", m2Desc: "Densité de stockage maximale sur palette et optimisation des flux d'entrepôt.",
-                m3Title: "Avantages Environnementaux", m3Desc: "100% compostable, zéro rejet de microplastiques et -78.5% d'eau.",
-                m4Title: "Avantages Structurels", m4Desc: "Façonnage sur mesure 1:1 et structure intelligente antichoque à haute résistance.",
-                m5Title: "Efficacité des Volumes", m5Desc: "Algorithme de calcul géométrique automatique pour un ajustement parfait.",
+                stat1: "📦 Boîtes (Année)", stat2: "☁️ CO2 Carton", leftH2: "Avantages & Données ECO-PAK",
+                v1Title: "Avantages Économiques", v1Desc: "Réduction des coûts de stockage, gestion des matériaux de calage et frais d'expédition réduits.",
+                v2Title: "Avantages Logistiques", v2Desc: "Optimisation extrême de l'espace sur palette, entrepôts plus libres et cycles de commande plus rapides.",
+                v3Title: "Avantages Environnementaux", v3Desc: "Compostage rapide certifié, économie d'eau de 78,5 % et élimination des déchets plastiques dispersés.",
+                v4Title: "Avantages Structurels", v4Desc: "Moulage sur mesure autour de l'article avec protection antichoque avancée absorbant l'énergie d'impact.",
+                v5Title: "Audience & Entreprises", v5Desc: "Fort intérêt du e-commerce, des hubs logistiques mondiaux et des marques soucieuses de l'ESG.",
                 crowdLabel: "Objectif / Fonds", supportBtn: "Soutenir",
                 revTitle: "Laisser un avis", revAuthorPlaceholder: "Votre nom...", revSubmit: "Envoyer",
                 historyTitle: "Avis publics", rightH2: "Performances Smart",
@@ -1084,12 +1084,12 @@
             zh: {
                 chat: "在线聊天", greenBadge: "100% 智能绿色",
                 title: "ECO-PAK：智能定制包装", subtitle: "物流智能革命",
-                stat1: "📦 箱数 (年)", stat2: "☁️ 纸箱二氧化碳", leftH2: "ECO-PAK 优势",
-                m1Title: "经济优势", m1Desc: "大幅降低物流、包装和企业仓储成本。",
-                m2Title: "物流优势", m2Desc: "实现托盘最大仓储密度并优化仓库流转效率。",
-                m3Title: "环保优势", m3Desc: "100% 可堆肥、零微塑料释放、节水率达 -78.5%。",
-                m4Title: "结构优势", m4Desc: "1:1 量身定制成型与高强度智能防震结构。",
-                m5Title: "体积效率", m5Desc: "自动几何计算算法，实现完美且具保护性的嵌入。",
+                stat1: "📦 箱数 (年)", stat2: "☁️ 纸箱二氧化碳", leftH2: "优势与 ECO-PAK 数据",
+                v1Title: "经济优势", v1Desc: "大幅降低仓储成本、填充材料管理费用以及运输支出。",
+                v2Title: "物流优势", v2Desc: "托盘空间的极致优化、仓库库存释放以及更快的订单处理周期。",
+                v3Title: "环保优势", v3Desc: "认证的快速堆肥、78.5% 的节水率以及消除塑料废弃物扩散。",
+                v4Title: "结构优势", v4Desc: "围绕物品进行1:1量身定制成型，具备吸收冲击能量的高级防震保护。",
+                v5Title: "受众与企业", v5Desc: "来自电商、全球物流枢纽以及注重 ESG 声誉的品牌的高度关注。",
                 crowdLabel: "已筹集 / 目标", supportBtn: "立即支持",
                 revTitle: "留下评价", revAuthorPlaceholder: "您的姓名...", revSubmit: "提交",
                 historyTitle: "评价历史", rightH2: "智能定制性能",
@@ -1128,11 +1128,11 @@
             document.getElementById('txt-stat1').innerText = t.stat1;
             document.getElementById('txt-stat2').innerText = t.stat2;
             document.getElementById('txt-left-h2').innerText = t.leftH2;
-            document.getElementById('txt-m1-title').innerText = t.m1Title; document.getElementById('txt-m1-desc').innerText = t.m1Desc;
-            document.getElementById('txt-m2-title').innerText = t.m2Title; document.getElementById('txt-m2-desc').innerText = t.m2Desc;
-            document.getElementById('txt-m3-title').innerText = t.m3Title; document.getElementById('txt-m3-desc').innerText = t.m3Desc;
-            document.getElementById('txt-m4-title').innerText = t.m4Title; document.getElementById('txt-m4-desc').innerText = t.m4Desc;
-            document.getElementById('txt-m5-title').innerText = t.m5Title; document.getElementById('txt-m5-desc').innerText = t.m5Desc;
+            document.getElementById('txt-v1-title').innerText = t.v1Title; document.getElementById('txt-v1-desc').innerText = t.v1Desc;
+            document.getElementById('txt-v2-title').innerText = t.v2Title; document.getElementById('txt-v2-desc').innerText = t.v2Desc;
+            document.getElementById('txt-v3-title').innerText = t.v3Title; document.getElementById('txt-v3-desc').innerText = t.v3Desc;
+            document.getElementById('txt-v4-title').innerText = t.v4Title; document.getElementById('txt-v4-desc').innerText = t.v4Desc;
+            document.getElementById('txt-v5-title').innerText = t.v5Title; document.getElementById('txt-v5-desc').innerText = t.v5Desc;
             document.getElementById('txt-crowd-label').innerText = t.crowdLabel;
             updateCrowdDisplay();
             document.getElementById('txt-support-btn').innerText = t.supportBtn;
