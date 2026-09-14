@@ -372,7 +372,7 @@
             overflow: hidden;
         }
 
-        /* FUSIONE PERFETTA DELL'IMMAGINE CON LO SFONDO ED ELIMINAZIONE SPAZI LATERALI */
+        /* RIDIMENSIONAMENTO AUTOMATICO E FUSIONE PERFETTA SENZA TAGLIARE L'IMMAGINE */
         .image-blend-container {
             position: relative;
             width: 100%;
@@ -390,12 +390,11 @@
         .image-blend-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Riempie tutto lo spazio rimuovendo i margini/spazi vuoti */
+            object-fit: contain; /* Mantiene l'intera foto visibile senza tagliarla */
             display: block;
-            /* Maschera di sfumatura graduale sui bordi per fonderla con lo sfondo scuro #121816 */
-            mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.1) 100%);
-            -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0.1) 100%);
-            filter: contrast(1.05) brightness(0.98);
+            /* Maschera di sfumatura orizzontale e verticale per dissolvere i bordi netti della foto nello sfondo #121816 */
+            mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
             transition: transform 0.5s ease;
         }
 
