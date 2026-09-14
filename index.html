@@ -372,11 +372,11 @@
             overflow: hidden;
         }
 
+        /* MODIFICA: Immagine centrale a larghezza piena, ridimensionamento automatico e sfumatura completa sui bordi */
         .image-blend-container {
             position: relative;
             width: 100%;
-            max-width: 100%;
-            height: 130px;
+            height: 150px;
             border-radius: 8px;
             overflow: hidden;
             background: #121816;
@@ -389,12 +389,10 @@
         .image-blend-container img {
             width: 100%;
             height: 100%;
-            /* Copre l'intero spazio riempiendo i lati senza distorsioni */
-            object-fit: cover; 
+            object-fit: cover;
             display: block;
-            /* Sfumatura avanzata per fondere i bordi verticali e orizzontali con lo sfondo */
-            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 98%);
-            mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 98%);
+            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+            mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
         }
 
         .crowd-stats-row {
