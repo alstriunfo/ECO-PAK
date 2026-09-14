@@ -389,10 +389,12 @@
         .image-blend-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            /* Copre l'intero spazio riempiendo i lati senza distorsioni */
+            object-fit: cover; 
             display: block;
-            -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 85%);
-            mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 85%);
+            /* Sfumatura avanzata per fondere i bordi verticali e orizzontali con lo sfondo */
+            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 98%);
+            mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 98%);
         }
 
         .crowd-stats-row {
