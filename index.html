@@ -175,8 +175,10 @@
 
         .header-live-stats {
             display: flex;
-            gap: 10px;
+            gap: 6px;
             justify-self: flex-end;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
         .header-stat-box {
             background: #1b2622;
@@ -188,12 +190,12 @@
             align-items: flex-end;
         }
         .header-stat-title {
-            font-size: 0.68rem;
+            font-size: 0.62rem;
             color: #95a5a6;
             text-transform: uppercase;
         }
         .header-stat-value {
-            font-size: 0.82rem;
+            font-size: 0.76rem;
             font-weight: 800;
         }
 
@@ -299,7 +301,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: bold;
             color: #ffffff;
             margin-bottom: 1px;
@@ -318,7 +320,7 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 4px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
         }
         
         .comparison-metric {
@@ -327,11 +329,11 @@
             gap: 4px;
         }
         .digi-value {
-            font-size: 0.78rem;
+            font-size: 0.74rem;
             font-weight: 800;
         }
         .vs-badge {
-            font-size: 0.58rem;
+            font-size: 0.55rem;
             padding: 1px 4px;
             border-radius: 3px;
             font-weight: 700;
@@ -354,7 +356,7 @@
         }
 
         .digi-desc {
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             color: #a3b2af;
             line-height: 1.2;
         }
@@ -437,19 +439,19 @@
             gap: 4px;
         }
         .stats-label {
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             color: #95a5a6;
             text-transform: uppercase;
             font-weight: 700;
         }
         .stats-main-text {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 900;
             color: #ffffff;
         }
         .raised-percentage {
             color: #2ecc71;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 900;
             background: rgba(46, 204, 113, 0.15);
             padding: 2px 6px;
@@ -506,7 +508,7 @@
             flex-shrink: 0;
         }
         .review-box h4 {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             color: #2ecc71;
             margin-bottom: 3px;
         }
@@ -520,7 +522,7 @@
             border: 1px solid #2d4238;
             color: #fff;
             padding: 4px 6px;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             border-radius: 4px;
             outline: none;
         }
@@ -534,7 +536,7 @@
             color: #f1c40f;
             border: 1px solid #2d4238;
             border-radius: 4px;
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             padding: 2px;
             outline: none;
         }
@@ -543,7 +545,7 @@
             color: #121816;
             border: none;
             padding: 3px 10px;
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             font-weight: bold;
             border-radius: 4px;
             cursor: pointer;
@@ -559,7 +561,7 @@
             overflow-y: auto;
         }
         .history-box h4 {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             color: #2ecc71;
             margin-bottom: 4px;
             display: flex;
@@ -575,7 +577,7 @@
             border: 1px solid #2d4238;
             padding: 4px 6px;
             border-radius: 4px;
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             display: flex;
             flex-direction: column;
             gap: 1px;
@@ -625,7 +627,7 @@
             flex-wrap: wrap;
         }
         .cookie-text {
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             color: #cbd5e1;
             line-height: 1.3;
             flex: 1;
@@ -642,7 +644,7 @@
         }
         .cookie-btn {
             padding: 6px 12px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 800;
             border-radius: 6px;
             cursor: pointer;
@@ -671,7 +673,7 @@
 
         footer {
             text-align: center;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             color: #7f8c8d;
             padding-top: 4px;
         }
@@ -722,6 +724,7 @@
                 <p id="txt-subtitle">La rivoluzione intelligente per la logistica</p>
             </div>
 
+            <!-- Dati in tempo reale & Fusi Orari -->
             <div class="header-live-stats">
                 <div class="header-stat-box">
                     <span class="header-stat-title" id="txt-stat1">📦 Scatoli (Anno)</span>
@@ -731,13 +734,25 @@
                     <span class="header-stat-title" id="txt-stat2">☁️ CO2 Cartoni</span>
                     <span class="header-stat-value" id="header-co2" style="color: #e74c3c;">842.30 Ton</span>
                 </div>
+                <div class="header-stat-box">
+                    <span class="header-stat-title">🇳🇿 Nuova Zelanda</span>
+                    <span class="header-stat-value" id="tz-nz" style="color: #3498db;">--:--:--</span>
+                </div>
+                <div class="header-stat-box">
+                    <span class="header-stat-title">🇮🇸 Islanda</span>
+                    <span class="header-stat-value" id="tz-is" style="color: #2ecc71;">--:--:--</span>
+                </div>
+                <div class="header-stat-box">
+                    <span class="header-stat-title">🇦🇺 Australia (Syd)</span>
+                    <span class="header-stat-value" id="tz-au" style="color: #f1c40f;">--:--:--</span>
+                </div>
             </div>
         </header>
 
         <!-- Sezione Principale -->
         <main class="main-grid">
             
-            <!-- Colonna Sinistra (Vantaggi Globali ECO-PAK con stima cartoni ridotti e utenti soddisfatti) -->
+            <!-- Colonna Sinistra -->
             <section class="card" aria-label="Vantaggi e Dati ECO-PAK">
                 <div class="card-header-live">
                     <h2 id="txt-left-h2">Vantaggi & Dati ECO-PAK</h2>
@@ -854,7 +869,7 @@
                 </div>
             </section>
 
-            <!-- Colonna Destra (Stato attuale, logistica tradizionale con i cartoni e CO2) -->
+            <!-- Colonna Destra -->
             <section class="card" aria-label="Stato Attuale e Logistica Tradizionale">
                 <div class="card-header-live">
                     <h2 id="txt-right-h2">Stato Attuale & Logistica Cartoni</h2>
@@ -1037,7 +1052,7 @@
                 v2Title: "满意用户", v2Desc: "买家和企业对 100% 可堆肥包装创新概念的超高满意度与热情反馈。",
                 v3Title: "环保优势", v3Desc: "认证的快速堆肥、78.5% 的节水率以及消除塑料废弃物扩散。",
                 v4Title: "结构优势", v4Desc: "围绕物品进行1:1量身定制成型，具备吸收冲击能量的高级防震保护。",
-                v5Title: "受众与企业", v5Desc: "来自电商、全球物流枢纽以及注重 ESG 声誉的品牌的高度关注。",
+                v5Title: "受众与企业", v5Desc: "来自电商、全球物流枢纽以及注重 ESG 声誉的高度关注。",
                 crowdLabel: "已筹集 / 目标", supportBtn: "立即支持",
                 revTitle: "留下评价", revAuthorPlaceholder: "您的姓名...", revSubmit: "提交",
                 historyTitle: "评价历史", rightH2: "现状与纸箱物流",
@@ -1123,12 +1138,26 @@
 
         let annualBoxesCount = 482910450;
         let co2Count = 842.30;
+        
+        function updateLiveClocks() {
+            const now = new Date();
+            // Nuova Zelanda (Auckland)
+            document.getElementById('tz-nz').innerText = now.toLocaleTimeString('it-IT', { timeZone: 'Pacific/Auckland' });
+            // Islanda (Reykjavik)
+            document.getElementById('tz-is').innerText = now.toLocaleTimeString('it-IT', { timeZone: 'Atlantic/Reykjavik' });
+            // Australia (Sydney)
+            document.getElementById('tz-au').innerText = now.toLocaleTimeString('it-IT', { timeZone: 'Australia/Sydney' });
+        }
+
         setInterval(() => {
             annualBoxesCount += Math.floor(Math.random() * 45) + 15;
             co2Count += (Math.random() * 0.08);
             document.getElementById('header-annual-boxes').innerText = annualBoxesCount.toLocaleString('it-IT');
             document.getElementById('header-co2').innerText = co2Count.toFixed(2) + " Ton";
-        }, 1500);
+            updateLiveClocks();
+        }, 1000);
+
+        updateLiveClocks();
 
         const reviewForm = document.getElementById('review-form-element');
         const historyContainer = document.getElementById('history-list-container');
