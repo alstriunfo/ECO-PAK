@@ -1181,9 +1181,9 @@
         updateLiveClocks();
 
         // --- GESTIONE RECENSIONI GLOBALI CON SUPABASE ---
-        const reviewForm = document.getElementById('review-form-element');
+        const reviewsForm = document.getElementById('reviews-form-element');
         const historyContainer = document.getElementById('history-list-container');
-        const reviewCounter = document.getElementById('review-counter');
+        const reviewsCounter = document.getElementById('reviews-counter');
 
         async function fetchReviews() {
             const { data, error } = await _supabase
