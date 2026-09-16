@@ -1189,7 +1189,7 @@
             const { data, error } = await _supabase
                 .from('reviews')
                 .select('*')
-                .order('created_at', { ascending: false });
+                .order('created_at', { ascending: false }); // Ordina dalla più recente
 
             if (error) {
                 console.error('Errore nel caricamento delle recensioni:', error);
@@ -1198,17 +1198,30 @@
 
             historyContainer.innerHTML = '';
             data.forEach(rev => {
+                // Converte la data di Supabase in formato leggibile italiano
+                let formattedDate = '';
+                if (rev.created_at) {
+                    const dateObj = new Date(rev.created_at);
+                    formattedDate = dateObj.toLocaleDateString('it-IT', { 
+                        day: '2-digit', month: '2-digit', year: 'numeric', 
+                        hour: '2-digit', minute: '2-digit' 
+                    });
+                }
+
                 const item = document.createElement('div');
                 item.className = 'history-item';
                 item.innerHTML = `
-                    <div class="history-item-header">👤 ${escapeHtml(rev.author)} <span class="history-item-stars">${rev.stars}</span></div>
+                    <div class="history-item-header">
+                        <span>👤 ${escapeHtml(rev.author)}</span> 
+                        <span class="history-item-stars">${rev.stars}</span>
+                    </div>
                     <span class="history-item-text">“${escapeHtml(rev.text)}”</span>
+                    ${formattedDate ? `<span style="font-size: 0.55rem; color: #7f8c8d; text-align: right; margin-top: 2px;">📅 ${formattedDate}</span>` : ''}
                 `;
                 historyContainer.appendChild(item);
             });
             reviewCounter.innerText = `(${data.length})`;
         }
-
         reviewForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             const authorInput = document.getElementById('review-author').value.trim();
