@@ -1,0 +1,6 @@
+# Blocca o consenti i crawler per il sito ECO-PAK
+User-agent: *
+Allow: /
+
+# Specifica la posizione della sitemap XML per facilitare l'indicizzazione
+Sitemap: https://www.eco-pak.it/sitemap.xml
