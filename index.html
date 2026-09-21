@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="it" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <!-- SEO On-Page Principale -->
+    <title>ECO-PAK® | Imballaggio, Smart Packaging, Spedizioni e Logistica Sostenibile</title>
+    <meta name="description" content="Scopri ECO-PAK: imballaggio intelligente, packaging su misura e soluzioni avanzate per la logistica e le spedizioni. Riduci i volumi, azzera le microplastiche.">
+    <meta name="keywords" content="imballaggio, packaging, spedizioni, logistica, smart packaging, imballaggio intelligente, ecopak, packaging su misura, logistica magazzino">
+    <meta name="author" content="ECO-PAK Team">
+    <link rel="canonical" href="https://www.eco-pak.it/">
+
+    <!-- Link alla sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.eco-pak.it/sitemap.xml">
+    
+    <!-- Open Graph / Social Media SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.eco-pak.it/">
+    <meta property="og:title" content="ECO-PAK | Imballaggio, Packaging e Logistica Sostenibile">
+    <meta property="og:description" content="Il primo imballaggio 100% compostabile su misura che rivoluziona le spedizioni e l'efficienza della logistica magazzino.">
+    <meta property="og:image" content="https://www.eco-pak.it/Cattura.JPG">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="ECO-PAK">
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ECO-PAK | Imballaggio e Logistica Intelligente">
+    <meta name="twitter:description" content="Rivoluziona le spedizioni e la logistica con imballaggi smart e sagomati su misura.">
+    <meta name="twitter:image" content="https://www.eco-pak.it/Cattura.JPG">
+
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Schema.org JSON-LD Ottimizzato -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ECO-PAK",
+      "url": "https://www.eco-pak.it/",
+      "logo": "https://www.eco-pak.it/Cattura.JPG",
+      "description": "Azienda leader nello sviluppo di sistemi di imballaggio, packaging smart, logistica e spedizioni industriali ecologiche.",
+      "knowsAbout": ["Imballaggio", "Packaging", "Spedizioni", "Logistica", "Economia Circolare"],
+      "sameAs": [
+        "https://www.indiegogo.com"
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121816;
+            color: #e0e6e2;
+            overflow: hidden;
+            font-size: 15px;
+        }
+
+        /* --- STILE PAGINA VELINA (SPLASH SCREEN) --- */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            background-color: #121816;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        #splash-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .splash-content {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .splash-content img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 2px solid #2d4238;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            margin-bottom: 20px;
+        }
+
+        .splash-content h2 {
+            color: #2ecc71;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .splash-content p {
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        /* ------------------------------------------- */
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            padding: 8px 14px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            border-bottom: 1px solid #2d4238;
+            padding-bottom: 6px;
+            margin-bottom: 6px;
+            gap: 10px;
+        }
+
+        .header-left-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-self: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .attractive-chat-btn {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: #121816;
+            border: 2px solid #58d68d;
+            padding: 6px 10px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 20px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            box-shadow: 0 0 12px rgba(46, 204, 113, 0.5);
+            animation: button-pop 2s infinite;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .chat-icon-pulse {
+            font-size: 0.85rem;
+            animation: icon-bounce 1s infinite alternate;
+        }
+        @keyframes button-pop {
+            0% { transform: scale(1); box-shadow: 0 0 10px rgba(46, 204, 113, 0.4); }
+            50% { transform: scale(1.04); box-shadow: 0 0 18px rgba(46, 204, 113, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 10px rgba(46, 204, 113, 0.4); }
+        }
+        @keyframes icon-bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-2px); }
+        }
+
+        .language-selector {
+            background: #1b2622;
+            color: #2ecc71;
+            border: 1px solid #2d4238;
+            padding: 6px 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .green-badge-static {
+            background: #1b2622;
+            color: #2ecc71;
+            border: 1px solid #2d4238;
+            padding: 6px 10px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+        .green-badge-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            background: rgba(46, 204, 113, 0.15);
+            border-radius: 50%;
+            font-size: 0.8rem;
+        }
+
+        .header-center {
+            text-align: center;
+            justify-self: center;
+        }
+        .header-center h1 {
+            font-size: 1.2rem;
+            color: #2ecc71;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
+        }
+        .header-center p {
+            font-size: 0.78rem;
+            color: #95a5a6;
+        }
+
+        .header-live-stats {
+            display: flex;
+            gap: 6px;
+            justify-self: flex-end;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .header-stat-box {
+            background: #1b2622;
+            border: 1px solid #2d4238;
+            padding: 4px 8px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .header-stat-title {
+            font-size: 0.62rem;
+            color: #95a5a6;
+            text-transform: uppercase;
+        }
+        .header-stat-value {
+            font-size: 0.76rem;
+            font-weight: 800;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1.3fr 1.1fr;
+            gap: 10px;
+            align-items: stretch;
+            margin: 4px 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .card {
+            background: #1b2622;
+            border: 1px solid #2d4238;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .card-header-live {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #2ecc71;
+            padding-bottom: 4px;
+            margin-bottom: 6px;
+            flex-shrink: 0;
+        }
+        .card-header-live h2 {
+            color: #2ecc71;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .live-badge {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.7rem;
+            color: #2ecc71;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: rgba(46, 204, 113, 0.1);
+            padding: 2px 6px;
+            border-radius: 8px;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+        }
+        .live-dot {
+            width: 5px;
+            height: 5px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #2ecc71;
+            animation: pulse-dot 1.5s infinite;
+        }
+        @keyframes pulse-dot {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .digital-cards-stack {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+            gap: 4px;
+            overflow: hidden;
+        }
+        .digi-card {
+            background: #121816;
+            border: 1px solid #2d4238;
+            border-radius: 6px;
+            padding: 5px 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+        .digi-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+        }
+        .border-red::before { background: #e74c3c; }
+        .border-orange::before { background: #f39c12; }
+        .border-green::before { background: #2ecc71; }
+        .border-blue::before { background: #3498db; }
+        .border-purple::before { background: #9b59b6; }
+
+        .digi-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.72rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 1px;
+        }
+        .digi-title-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .digi-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            font-size: 0.65rem;
+        }
+        
+        .comparison-metric {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .digi-value {
+            font-size: 0.74rem;
+            font-weight: 800;
+        }
+
+        .digi-squares-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            margin-top: 3px;
+        }
+        .digi-square {
+            background: rgba(27, 38, 34, 0.6);
+            border: 1px solid #2d4238;
+            border-radius: 4px;
+            padding: 2px 5px;
+            display: flex;
+            flex-direction: column;
+        }
+        .digi-square-label {
+            font-size: 0.52rem;
+            color: #95a5a6;
+            text-transform: uppercase;
+        }
+        .digi-square-val {
+            font-size: 0.68rem;
+            font-weight: 800;
+            color: #2ecc71;
+        }
+
+        .digi-desc {
+            font-size: 0.62rem;
+            color: #a3b2af;
+            line-height: 1.15;
+            margin-top: 1px;
+        }
+
+        .center-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            gap: 4px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* --- STILE SLIDER PRIMA / DOPO INTERATTIVO --- */
+        .ba-slider-container {
+            position: relative;
+            width: 100%;
+            height: 125px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #121816;
+            border: 1px solid #2d4238;
+            flex-shrink: 0;
+            cursor: ew-resize;
+            user-select: none;
+            touch-action: pan-y;
+        }
+
+        .ba-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .ba-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+        }
+
+        /* Immagine 'Prima' (Standard) con filtro per renderla visivamente più spenta/industriale/plastica */
+        .ba-slide.ba-before img {
+            filter: grayscale(50%) contrast(110%) sepia(20%);
+        }
+
+        /* Immagine 'Dopo' (ECO-PAK) ridimensionata dinamicamente */
+        .ba-slide.ba-after {
+            width: 50%;
+            border-right: 2px solid #2ecc71;
+            box-shadow: 4px 0 15px rgba(46, 204, 113, 0.4);
+        }
+
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: #2ecc71;
+            z-index: 10;
+            pointer-events: none;
+            transform: translateX(-50%);
+        }
+
+        .ba-handle-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 28px;
+            height: 28px;
+            background: #2ecc71;
+            color: #121816;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(46, 204, 113, 0.8);
+        }
+
+        .ba-badge {
+            position: absolute;
+            bottom: 6px;
+            padding: 2px 8px;
+            font-size: 0.58rem;
+            font-weight: 800;
+            border-radius: 4px;
+            z-index: 5;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .ba-badge-before {
+            right: 6px;
+            background: rgba(231, 76, 60, 0.85);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .ba-badge-after {
+            left: 6px;
+            background: rgba(46, 204, 113, 0.85);
+            color: #121816;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        /* --------------------------------------------- */
+
+        .crowd-stats-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            flex-shrink: 0;
+            margin-top: 10px;
+        }
+        .crowd-stats {
+            background: linear-gradient(145deg, #1b2622, #141d1a);
+            border: 1px solid #2d4238;
+            padding: 6px 10px;
+            border-radius: 8px;
+            flex: 1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+        .crowd-stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #2ecc71;
+        }
+        .stats-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .stats-left-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+        .stats-label-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .stats-label {
+            font-size: 0.65rem;
+            color: #95a5a6;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .stats-main-text {
+            font-size: 0.9rem;
+            font-weight: 900;
+            color: #ffffff;
+        }
+        .raised-percentage {
+            color: #2ecc71;
+            font-size: 0.9rem;
+            font-weight: 900;
+            background: rgba(46, 204, 113, 0.15);
+            padding: 2px 6px;
+            border-radius: 6px;
+            border: 1px solid rgba(46, 204, 113, 0.4);
+        }
+        .progress-bar-container {
+            background: #121816;
+            border-radius: 4px;
+            height: 6px;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid rgba(45, 66, 56, 0.9);
+        }
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #27ae60, #2ecc71, #58d68d);
+            height: 100%;
+            width: 74%;
+            border-radius: 4px;
+        }
+
+        .crowdfund-btn {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: #121816;
+            padding: 10px 14px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 1px solid #58d68d;
+            white-space: nowrap;
+        }
+
+        .reviews-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            text-align: left;
+            flex-grow: 1;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+        .review-box {
+            background: #1b2622;
+            border: 1px solid #2d4238;
+            padding: 6px 8px;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .review-box h4 {
+            font-size: 0.7rem;
+            color: #2ecc71;
+            margin-bottom: 3px;
+        }
+        .review-form {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .review-input {
+            background: #121816;
+            border: 1px solid #2d4238;
+            color: #fff;
+            padding: 5px 6px;
+            font-size: 0.68rem;
+            border-radius: 4px;
+            outline: none;
+            width: 100%;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            font-family: inherit;
+        }
+        textarea.review-input {
+            resize: none;
+            height: 34px;
+            line-height: 1.2;
+        }
+
+        .review-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .stars select {
+            background: #121816;
+            color: #f1c40f;
+            border: 1px solid #2d4238;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            padding: 2px;
+            outline: none;
+        }
+        .submit-review-btn {
+            background: #2ecc71;
+            color: #121816;
+            border: none;
+            padding: 3px 10px;
+            font-size: 0.65rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .history-box {
+            background: #1b2622;
+            border: 1px solid #2d4238;
+            padding: 6px 8px;
+            border-radius: 6px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .history-box h4 {
+            font-size: 0.7rem;
+            color: #2ecc71;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .history-item {
+            background: #121816;
+            border: 1px solid #2d4238;
+            padding: 4px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        .history-item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .history-item-stars {
+            color: #f1c40f;
+        }
+        .history-item-text {
+            color: #95a5a6;
+            font-style: italic;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* --- STILE TOAST ANIMATO PERSONALIZZATO --- */
+        .custom-toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(120px);
+            background: #1b2622;
+            border: 2px solid #2ecc71;
+            color: #e0e6e2;
+            padding: 14px 22px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+            max-width: 90%;
+            width: 400px;
+            text-align: left;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        .custom-toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+        .custom-toast.hidden {
+            display: none;
+        }
+        .toast-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        .toast-message {
+            flex-grow: 1;
+            line-height: 1.3;
+        }
+        /* ------------------------------------------- */
+
+        .seo-content-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(18, 24, 22, 0.95);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid #2d4238;
+            padding: 10px 15px;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+        .cookie-banner.hidden {
+            transform: translateY(100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .cookie-content {
+            max-width: 1300px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .cookie-text {
+            font-size: 0.75rem;
+            color: #cbd5e1;
+            line-height: 1.3;
+            flex: 1;
+            min-width: 250px;
+        }
+        .cookie-text a {
+            color: #2ecc71;
+            text-decoration: underline;
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .cookie-btn {
+            padding: 6px 12px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .cookie-btn-accept {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: #121816;
+            box-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
+        }
+        .cookie-btn-accept:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+        .cookie-btn-reject {
+            background: #1b2622;
+            color: #e0e6e2;
+            border: 1px solid #2d4238;
+        }
+        .cookie-btn-reject:hover {
+            background: #273530;
+            color: #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #7f8c8d;
+            padding-top: 4px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            html, body {
+                overflow: auto;
+                height: auto;
+            }
+            .container {
+                height: auto;
+            }
+            .main-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+                overflow: visible;
+            }
+            .card {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pagina Velina (Splash Screen) -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="Cattura.JPG" alt="ECO-PAK Splash">
+            <h2>ECO-PAK®</h2>
+            <p>Caricamento soluzioni sostenibili...</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-left-group">
+                <button type="button" onclick="if(typeof Tawk_API !== 'undefined') { Tawk_API.toggle(); }" class="attractive-chat-btn" aria-label="Avvia Chat Live">
+                    <span class="chat-icon-pulse">💬</span>
+                    <span id="txt-chat">Chat Live</span>
+                </button>
+                <select id="lang-select" class="language-selector" aria-label="Seleziona lingua">
+                    <option value="it">🇮🇹 Italiano</option>
+                    <option value="en">🇬🇧 English</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="zh">🇨🇳 中文</option>
+                </select>
+                <div class="green-badge-static">
+                    <span class="green-badge-icon">🌿</span>
+                    <span id="txt-green-badge">100% Smart & Green</span>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <h1 id="txt-title">ECO-PAK: Imballaggio, Smart Packaging & Logistica</h1>
+                <p id="txt-subtitle">La rivoluzione intelligente per le spedizioni e il magazzino</p>
+            </div>
+
+            <div class="header-live-stats">
+                <div class="header-stat-box">
+                    <span class="header-stat-title" id="txt-stat1">📦 Scatoli (Anno)</span>
+                    <span class="header-stat-value" id="header-annual-boxes" style="color: #f39c12;">482.910.450</span>
+                </div>
+                <div class="header-stat-box">
+                    <span class="header-stat-title" id="txt-stat2">☁️ CO2 Cartoni</span>
+                    <span class="header-stat-value" id="header-co2" style="color: #e74c3c;">842.30 Ton</span>
+                </div>
+                <div class="header-stat-box">
+                    <span class="header-stat-title">🇳🇿 Nuova Zelanda</span>
+                    <span class="header-stat-value" id="tz-nz" style="color: #3498db;">--:--:--</span>
+                </div>
+                <div class="header-stat-box">
+                    <span class="header-stat-title">🇮🇸 Islanda</span>
+                    <span class="header-stat-value" id="tz-is" style="color: #2ecc71;">--:--:--</span>
+                </div>
+                <div class="header-stat-box">
+                    <span class="header-stat-title">🇦🇺 Australia (Syd)</span>
+                    <span class="header-stat-value" id="tz-au" style="color: #f1c40f;">--:--:--</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sezione Principale -->
+        <main class="main-grid">
+            
+            <!-- Colonna Sinistra -->
+            <section class="card" aria-label="Vantaggi e Dati ECO-PAK">
+                <div class="card-header-live">
+                    <h2 id="txt-left-h2">Vantaggi & Dati ECO-PAK</h2>
+                    <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+                </div>
+                
+                <div class="digital-cards-stack">
+                    <article class="digi-card border-green">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">📦</span><span id="txt-v1-title">Riduzione Cartoni</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #2ecc71;">-45 Milioni</span>
+                            </div>
+                        </div>
+                        <div class="digi-squares-grid">
+                            <div class="digi-square"><span class="digi-square-label">Volume Salvato</span><span class="digi-square-val" id="dyn-v1-sq1">--</span></div>
+                            <div class="digi-square"><span class="digi-square-label">Efficienza Stock</span><span class="digi-square-val" id="dyn-v1-sq2">--</span></div>
+                        </div>
+                        <div class="digi-desc" id="txt-v1-desc">Stima di oltre 45 milioni di scatole tradizionali eliminate grazie all'adozione del design su misura ed eliminazione dei vuoti.</div>
+                    </article>
+
+                    <article class="digi-card border-blue">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">😊</span><span id="txt-v2-title">Utenti Soddisfatti</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #3498db;">+14.850 Clienti</span>
+                            </div>
+                        </div>
+                        <div class="digi-squares-grid">
+                            <div class="digi-square"><span class="digi-square-label">Indice Gradimento</span><span class="digi-square-val" id="dyn-v2-sq1">--</span></div>
+                            <div class="digi-square"><span class="digi-square-label">Fedeltà Brand</span><span class="digi-square-val" id="dyn-v2-sq2">--</span></div>
+                        </div>
+                        <div class="digi-desc" id="txt-v2-desc">Consensi entusiasti registrati da parte di acquirenti e aziende per l'innovativo concept del pacco 100% compostabile.</div>
+                    </article>
+
+                    <article class="digi-card border-purple">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">🌍</span><span id="txt-v3-title">Vantaggi Ambientali</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #9b59b6;">Zero Microplastiche</span>
+                            </div>
+                        </div>
+                        <div class="digi-squares-grid">
+                            <div class="digi-square"><span class="digi-square-label">Risparmio Idrico</span><span class="digi-square-val" id="dyn-v3-sq1">--</span></div>
+                            <div class="digi-square"><span class="digi-square-label">Compostaggio</span><span class="digi-square-val" id="dyn-v3-sq2">--</span></div>
+                        </div>
+                        <div class="digi-desc" id="txt-v3-desc">Compostaggio rapido certificato, risparmio idrico del 78.5% e azzeramento dei rifiuti plastici dispersi nell'ambiente.</div>
+                    </article>
+
+                    <article class="digi-card border-orange">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">🛡️</span><span id="txt-v4-title">Vantaggi Strutturali</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #f39c12;">Adattamento 1:1</span>
+                            </div>
+                        </div>
+                        <div class="digi-squares-grid">
+                            <div class="digi-square"><span class="digi-square-label">Resistenza Urto</span><span class="digi-square-val" id="dyn-v4-sq1">--</span></div>
+                            <div class="digi-square"><span class="digi-square-label">Fattore Forma</span><span class="digi-square-val" id="dyn-v4-sq2">--</span></div>
+                        </div>
+                        <div class="digi-desc" id="txt-v4-desc">Sagomatura su misura attorno all'articolo con protezione anti-urto avanzata che assorbe l'energia degli impatti meccanici.</div>
+                    </article>
+
+                    <article class="digi-card border-red">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">👥</span><span id="txt-v5-title">Audience & Aziende</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #e74c3c;">+12.5k Aziende</span>
+                            </div>
+                        </div>
+                        <div class="digi-squares-grid">
+                            <div class="digi-square"><span class="digi-square-label">Hub Logistici</span><span class="digi-square-val" id="dyn-v5-sq1">--</span></div>
+                            <div class="digi-square"><span class="digi-square-label">Reputazione ESG</span><span class="digi-square-val" id="dyn-v5-sq2">--</span></div>
+                        </div>
+                        <div class="digi-desc" id="txt-v5-desc">Forte interesse da parte di e-commerce, hub logistici globali e brand attenti alla sostenibilità e reputazione ESG.</div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Colonna Centrale -->
+            <section class="center-stage" aria-label="Supporto e CrowdFunding">
+                <!-- SLIDER INTERATTIVO PRIMA / DOPO -->
+                <div class="ba-slider-container" id="ba-slider" title="Trascina per confrontare Standard vs ECO-PAK">
+                    <!-- Slide Standard (Prima) -->
+                    <div class="ba-slide ba-before">
+                        <img src="Cattura.JPG" alt="Imballaggio Standard con plastica">
+                        <span class="ba-badge ba-badge-before">Standard (Plastica & Vuoti)</span>
+                    </div>
+                    <!-- Slide ECO-PAK (Dopo) -->
+                    <div class="ba-slide ba-after" id="ba-after-slide">
+                        <img src="Cattura.JPG" alt="ECO-PAK Compostabile su misura">
+                        <span class="ba-badge ba-badge-after">ECO-PAK (Smart & Green)</span>
+                    </div>
+                    <!-- Maniglia di trascinamento -->
+                    <div class="ba-handle" id="ba-handle">
+                        <div class="ba-handle-button">↔</div>
+                    </div>
+                </div>
+                
+                <div class="crowd-stats-row">
+                    <div class="crowd-stats">
+                        <div class="stats-info">
+                            <div class="stats-left-group">
+                                <div class="stats-label-wrapper">
+                                    <span class="stats-label" id="txt-crowd-label">Fondi Raccolti / Obiettivo</span>
+                                    <div class="live-badge" style="padding: 1px 4px; font-size: 0.6rem;"><div class="live-dot"></div> LIVE</div>
+                                </div>
+                                <span class="stats-main-text" id="txt-crowd-amount">37.000 € / 50.000 €</span>
+                            </div>
+                            <span class="raised-percentage" id="raised-pct">74%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" id="progress-bar-fill-elem"></div>
+                        </div>
+                    </div>
+                    <a href="https://www.indiegogo.com" target="_blank" class="crowdfund-btn" id="txt-support-btn" aria-label="Sostieni su Indiegogo">Sostieni ora</a>
+                </div>
+
+                <div class="reviews-wrapper">
+                    <div class="review-box">
+                        <h4 id="txt-rev-title">Lascia una recensione sul progetto</h4>
+                        <form class="review-form" id="review-form-element">
+                            <textarea class="review-input" id="review-text" placeholder="Scrivi la tua recensione e lascia la tua email per essere ricontattato..." required aria-label="Testo della recensione"></textarea>
+                            <div class="review-footer">
+                                <div class="stars">
+                                    <select id="review-stars" aria-label="Valutazione stelle">
+                                        <option value="★★★★★">★★★★★ (5/5)</option>
+                                        <option value="★★★★☆">★★★★☆ (4/5)</option>
+                                        <option value="★★★☆☆">★★★☆☆ (3/5)</option>
+                                        <option value="★★☆☆☆">★★☆☆☆ (2/5)</option>
+                                        <option value="★☆☆☆☆">★☆☆☆☆ (1/5)</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="submit-review-btn" id="txt-rev-submit">Invia</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="history-box">
+                        <h4 id="txt-history-title">Storico Recensioni <span id="review-counter" style="color: #95a5a6; font-size: 0.65rem;">(0)</span></h4>
+                        <div class="history-list" id="history-list-container"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Colonna Destra -->
+            <section class="card" aria-label="Stato Attuale e Logistica Tradizionale">
+                <div class="card-header-live">
+                    <h2 id="txt-right-h2">Stato Attuale & Logistica Cartoni</h2>
+                    <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+                </div>
+                
+                <div class="digital-cards-stack">
+                    <article class="digi-card border-red">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">📊</span><span id="txt-l1-title">Volume Scatole Standard</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #e74c3c;">482 Milioni</span>
+                            </div>
+                        </div>
+                        <div class="digi-squares-grid">
+                            <div class="digi-square"><span class="digi-square-label">Spreco Annuo</span><span class="digi-square-val" id="dyn-l1-sq1">--</span></div>
+                            <div class="digi-square"><span class="digi-square-label">Costo Medio/Pezzo</span><span class="digi-square-val" id="dyn-l1-sq2">--</span></div>
+                        </div>
+                        <div class="digi-desc" id="txt-l1-desc">Consumo massiccio di imballaggi standardizzati non ottimizzati nel settore e-commerce.</div>
+                    </article>
+
+                    <article class="digi-card border-orange">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">📦</span><span id="txt-l2-title">Spazio Vuoto nei Cartoni</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #f39c12;">~40% di Spreco</span>
+                            </div>
+                        </div>
+                        <div class="digi-squares-grid">
+                            <div class="digi-square"><span class="digi-square-label">Riempitivo Plastica</span><span class="digi-square-val" id="dyn-l2-sq1">--</span></div>
+                            <div class="digi-square"><span class="digi-square-label">Inutilizzato</span><span class="digi-square-val" id="dyn-l2-sq2">--</span></div>
+                        </div>
+                        <div class="digi-desc" id="txt-l2-desc">Le scatole tradizionali lasciano ampi spazi vuoti riempiti con materiali plastici di riempimento.</div>
+                    </article>
+
+                    <article class="digi-card border-red">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">☁️</span><span id="txt-l3-title">Emissioni CO2 Cartoni</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #e74c3c;">842+ Tonnellate</span>
+                            </div>
+                        </div>
+                        <div class="digi-squares-grid">
+                            <div class="digi-square"><span class="digi-square-label">Impatto Filiera</span><span class="digi-square-val" id="dyn-l3-sq1">--</span></div>
+                            <div class="digi-square"><span class="digi-square-label">Smaltimento</span><span class="digi-square-val" id="dyn-l3-sq2">--</span></div>
+                        </div>
+                        <div class="digi-desc" id="txt-l3-desc">Alto impatto ambientale derivante dalla produzione, taglio e smaltimento dei cartoni tradizionali.</div>
+                    </article>
+
+                    <article class="digi-card border-purple">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">🚚</span><span id="txt-l4-title">Efficienza di Trasporto</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #9b59b6;">Bassa Densità</span>
+                            </div>
+                        </div>
+                        <div class="digi-squares-grid">
+                            <div class="digi-square"><span class="digi-square-label">Merce su Pallet</span><span class="digi-square-val" id="dyn-l4-sq1">--</span></div>
+                            <div class="digi-square"><span class="digi-square-label">Spazio Sprecato</span><span class="digi-square-val" id="dyn-l4-sq2">--</span></div>
+                        </div>
+                        <div class="digi-desc" id="txt-l4-desc">Minore quantità di merce trasportabile per singolo pallet a causa delle dimensioni fisse dei cartoni.</div>
+                    </article>
+
+                    <article class="digi-card border-orange">
+                        <div class="digi-header">
+                            <div class="digi-title-group"><span class="digi-icon">💸</span><span id="txt-l5-title">Costi di Imballaggio</span></div>
+                            <div class="comparison-metric">
+                                <span class="digi-value" style="color: #f39c12;">Costi Elevati</span>
+                            </div>
+                        </div>
+                        <div class="digi-squares-grid">
+                            <div class="digi-square"><span class="digi-square-label">Formati Multipli</span><span class="digi-square-val" id="dyn-l5-sq1">--</span></div>
+                            <div class="digi-square"><span class="digi-square-label">Extra Materiali</span><span class="digi-square-val" id="dyn-l5-sq2">--</span></div>
+                        </div>
+                        <div class="digi-desc" id="txt-l5-desc">Esborso economico maggiore per l'acquisto di formati multipli di scatole e materiale protettivo extra.</div>
+                    </article>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Blocco SEO Testuale per indicizzazione Google -->
+        <div class="seo-content-hidden">
+            <h2>Soluzioni innovative per imballaggio e packaging</h2>
+            <p>ECO-PAK offre sistemi avanzati di imballaggio ecologico e packaging intelligente su misura per migliorare le prestazioni di logistica e spedizioni aziendali. Riduci i costi di magazzino e ottimizza ogni spedizione riducendo gli sprechi di cartone e plastica.</p>
+        </div>
+
+        <footer>
+            <p id="txt-footer">&copy; 2026 ECO-PAK. Obiettivo: Accelerare lo sviluppo tramite prototipi e test certificati.</p>
+        </footer>
+    </div>
+
+    <!-- Banner Cookie -->
+    <div id="cookie-banner" class="cookie-banner" aria-label="Consenso Cookie">
+        <div class="cookie-content">
+            <div class="cookie-text" id="cookie-text-msg">
+                Questo sito utilizza cookie tecnici e di analisi per migliorare l'esperienza di navigazione. Cliccando su "Accetta", acconsenti all'uso di tutti i cookie. Puoi rifiutare cliccando su "Rifiuta".
+            </div>
+            <div class="cookie-buttons">
+                <button type="button" id="cookie-reject-btn" class="cookie-btn cookie-btn-reject">Rifiuta</button>
+                <button type="button" id="cookie-accept-btn" class="cookie-btn cookie-btn-accept">Accetta</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notifica Animata -->
+    <div id="custom-toast" class="custom-toast hidden">
+        <div class="toast-icon">🌿</div>
+        <div class="toast-message" id="toast-message-text"></div>
+    </div>
+
+    <!-- Script Tawk.to -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6aa5c1fb47c9e9344a37cab2/1k2bnrgcs';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!-- End of Tawk.to Script -->
+
+    <!-- Script JavaScript aggiornato -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                if (splash) {
+                    splash.classList.add('fade-out');
+                    setTimeout(() => splash.remove(), 1000);
+                }
+            }, 3000); 
+
+            updateDynamicSquaresOnLoad();
+            checkUserAlreadyReviewed();
+            initBeforeAfterSlider();
+        });
+
+        /* --- LOGICA SLIDER PRIMA / DOPO --- */
+        function initBeforeAfterSlider() {
+            const slider = document.getElementById('ba-slider');
+            const afterSlide = document.getElementById('ba-after-slide');
+            const handle = document.getElementById('ba-handle');
+
+            let isDragging = false;
+
+            function moveSlider(clientX) {
+                const rect = slider.getBoundingClientRect();
+                let x = clientX - rect.left;
+                if (x < 0) x = 0;
+                if (x > rect.width) x = rect.width;
+                const percentage = (x / rect.width) * 100;
+                afterSlide.style.width = percentage + '%';
+                handle.style.left = percentage + '%';
+            }
+
+            slider.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                moveSlider(e.clientX);
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                moveSlider(e.clientX);
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            // Touch support per mobile
+            slider.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                moveSlider(e.touches[0].clientX);
+            });
+
+            window.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                moveSlider(e.touches[0].clientX);
+            });
+
+            window.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+        }
+        /* ----------------------------------- */
+
+        function updateDynamicSquaresOnLoad() {
+            document.getElementById('dyn-v1-sq1').innerText = "-" + (Math.floor(Math.random() * 15) + 85) + "%";
+            document.getElementById('dyn-v1-sq2').innerText = "+" + (Math.floor(Math.random() * 20) + 30) + "% Opt";
+
+            document.getElementById('dyn-v2-sq1').innerText = (Math.random() * (5.0 - 4.8) + 4.8).toFixed(1) + " / 5.0 ⭐";
+            document.getElementById('dyn-v2-sq2').innerText = "+" + (Math.floor(Math.random() * 500) + 1200) + " oggi";
+
+            document.getElementById('dyn-v3-sq1').innerText = "78.5% Netto";
+            document.getElementById('dyn-v3-sq2').innerText = "< 90 Giorni";
+
+            document.getElementById('dyn-v4-sq1').innerText = "Class 99.4%";
+            document.getElementById('dyn-v4-sq2').innerText = "Zero Vuoti";
+
+            document.getElementById('dyn-v5-sq1').innerText = "+" + (Math.floor(Math.random() * 120) + 450) + " Hubs";
+            document.getElementById('dyn-v5-sq2').innerText = "Rating A++";
+
+            document.getElementById('dyn-l1-sq1').innerText = (Math.floor(Math.random() * 10) + 475) + "M /anno";
+            document.getElementById('dyn-l1-sq2').innerText = "€ " + (Math.random() * (1.5 - 0.8) + 0.8).toFixed(2) + " cad";
+
+            document.getElementById('dyn-l2-sq1').innerText = (Math.floor(Math.random() * 15) + 35) + "% Plastica";
+            document.getElementById('dyn-l2-sq2').innerText = "Alto Spreco";
+
+            document.getElementById('dyn-l3-sq1').innerText = "+" + (Math.floor(Math.random() * 50) + 810) + " Ton";
+            document.getElementById('dyn-l3-sq2').innerText = "Smalt. Difficile";
+
+            document.getElementById('dyn-l4-sq1').innerText = "-" + (Math.floor(Math.random() * 15) + 25) + "% Carico";
+            document.getElementById('dyn-l4-sq2').innerText = "Inefficiente";
+
+            document.getElementById('dyn-l5-sq1').innerText = "+" + (Math.floor(Math.random() * 30) + 40) + "% Spesa";
+            document.getElementById('dyn-l5-sq2').innerText = "Extra Costi";
+        }
+
+        const SUPABASE_URL = 'https://ozowrpbpzwzicxeqnlmb.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_5WFB4lyjnKjGIBbMxBXEnA_t-ipSsMa';
+        
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        let currentLang = 'it';
+        let currentFundAmount = 37000;
+        const targetFundAmount = 50000;
+
+        const translations = {
+            it: {
+                chat: "Chat Live", greenBadge: "100% Smart & Green",
+                title: "ECO-PAK: Imballaggio, Packaging Smart & Logistica", subtitle: "La rivoluzione intelligente per le spedizioni e il magazzino",
+                stat1: "📦 Scatoli (Anno)", stat2: "☁️ CO2 Cartoni", leftH2: "Vantaggi & Dati ECO-PAK",
+                v1Title: "Riduzione Cartoni", v1Desc: "Stima di oltre 45 milioni di scatole tradizionali eliminate grazie all'adozione del design su misura ed eliminazione dei vuoti.",
+                v2Title: "Utenti Soddisfatti", v2Desc: "Consensi entusiasti registrati da parte di acquirenti e aziende per l'innovativo concept del pacco 100% compostabile.",
+                v3Title: "Vantaggi Ambientali", v3Desc: "Compostaggio rapido certificato, risparmio idrico del 78.5% e azzeramento dei rifiuti plastici dispersi nell'ambiente.",
+                v4Title: "Vantaggi Strutturali", v4Desc: "Sagomatura su misura attorno all'articolo con protezione anti-urto avanzata che assorbe l'energia degli impatti meccanici.",
+                v5Title: "Audience & Aziende", v5Desc: "Forte interesse da parte di e-commerce, hub logistici globali e brand attenti alla sostenibilità e reputazione ESG.",
+                crowdLabel: "Fondi Raccolti / Obiettivo", supportBtn: "Sostieni ora",
+                revTitle: "Lascia una recensione sul progetto", revTextPlaceholder: "Scrivi la tua recensione e lascia la tua email per essere ricontattato...", revSubmit: "Invia",
+                historyTitle: "Storico Recensioni", rightH2: "Stato Attuale & Logistica Cartoni",
+                l1Title: "Volume Scatole Standard", l1Desc: "Consumo massiccio di imballaggi standardizzati non ottimizzati nel settore e-commerce.",
+                l2Title: "Spazio Vuoto nei Cartoni", l2Desc: "Le scatole tradizionali lasciano ampi spazi vuoti riempiti con materiali plastici di riempimento.",
+                l3Title: "Emissioni CO2 Cartoni", l3Desc: "Alto impatto ambientale derivante dalla produzione, taglio e smaltimento dei cartoni tradizionali.",
+                l4Title: "Efficienza di Trasporto", l4Desc: "Minore quantità di merce trasportabile per singolo pallet a causa delle dimensioni fisse dei cartoni.",
+                l5Title: "Costi di Imballaggio", l5Desc: "Esborso economico maggiore per l'acquisto di formati multipli di scatole e materiale protettivo extra.",
+                footer: "&copy; 2026 ECO-PAK. Obiettivo: Accelerare lo sviluppo tramite prototipi e test certificati.",
+                reviewAlert: "Grazie! La tua recensione è stata pubblicata.",
+                reviewAlreadyDone: "Hai già inviato una recensione. Ringraziamo per il tuo contributo.",
+                cookieMsg: "Questo sito utilizza cookie tecnici e di analisi per migliorare l'esperienza di navigazione. Cliccando su \"Accetta\", acconsenti all'uso di tutti i cookie. Puoi rifiutare cliccando su \"Rifiuta\".",
+                cookieAccept: "Accetta",
+                cookieReject: "Rifiuta"
+            },
+            en: {
+                chat: "Live Chat", greenBadge: "100% Smart & Green",
+                title: "ECO-PAK: Packaging, Smart Packaging & Logistics", subtitle: "The intelligent revolution for shipping and warehousing",
+                stat1: "📦 Boxes (Year)", stat2: "☁️ Carton CO2", leftH2: "Benefits & ECO-PAK Data",
+                v1Title: "Carton Reduction", v1Desc: "Estimate of over 45 million traditional boxes eliminated thanks to custom design and void elimination.",
+                v2Title: "Satisfied Users", v2Desc: "Enthusiastic approvals recorded from buyers and companies for the innovative 100% compostable package concept.",
+                v3Title: "Environmental Benefits", v3Desc: "Certified rapid composting, 78.5% water savings, and elimination of scattered plastic waste.",
+                v4Title: "Structural Benefits", v4Desc: "Custom shaping around the item with advanced shockproof protection absorbing impact energy.",
+                v5Title: "Audience & Companies", v5Desc: "Strong interest from e-commerce, global logistics hubs, and brands focused on sustainability and ESG reputation.",
+                crowdLabel: "Funds Raised / Goal", supportBtn: "Support Now",
+                revTitle: "Leave a project review", revTextPlaceholder: "Write your review and leave your email to be contacted...", revSubmit: "Submit",
+                historyTitle: "Reviews History", rightH2: "Current Status & Carton Logistics",
+                l1Title: "Standard Box Volume", l1Desc: "Massive consumption of standardized, non-optimized packaging in the e-commerce sector.",
+                l2Title: "Carton Empty Space", l2Desc: "Traditional boxes leave large empty spaces filled with plastic padding materials.",
+                l3Title: "Carton CO2 Emissions", l3Desc: "High environmental impact from production, cutting, and disposal of traditional cartons.",
+                l4Title: "Transport Efficiency", l4Desc: "Lower amount of transportable goods per single pallet due to fixed box sizes.",
+                l5Title: "Packaging Costs", l5Desc: "Higher economic outlay for purchasing multiple box sizes and extra protective material.",
+                footer: "&copy; 2026 ECO-PAK. Goal: Accelerate development through lab tests.",
+                reviewAlert: "Thank you! Your review has been published.",
+                reviewAlreadyDone: "You have already submitted a review. Thank you for your contribution.",
+                cookieMsg: "This site uses technical and analytics cookies to improve your browsing experience. By clicking \"Accept\", you consent to the use of all cookies. You can decline by clicking \"Reject\".",
+                cookieAccept: "Accept",
+                cookieReject: "Reject"
+            },
+            fr: {
+                chat: "Chat", greenBadge: "100% Smart & Green",
+                title: "ECO-PAK : Emballage, Smart Packaging & Logistique", subtitle: "La révolution intelligente pour l'expédition",
+                stat1: "📦 Boîtes (Année)", stat2: "☁️ CO2 Carton", leftH2: "Avantages & Données ECO-PAK",
+                v1Title: "Réduction Cartons", v1Desc: "Estimation de plus de 45 millions de boîtes traditionnelles éliminées grâce au design sur mesure.",
+                v2Title: "Utilisateurs Satisfaits", v2Desc: "Approbations enthousiastes enregistrées auprès des acheteurs pour le concept d'emballage 100% compostable.",
+                v3Title: "Avantages Environnementaux", v3Desc: "Compostage rapide certifié, économie d'eau de 78,5 % et élimination des déchets plastiques.",
+                v4Title: "Avantages Structurels", v4Desc: "Moulage sur mesure autour de l'article avec protection antichoque avancée absorbant l'énergie d'impact.",
+                v5Title: "Audience & Entreprises", v5Desc: "Fort intérêt du e-commerce, des hubs logistiques mondiaux et des marques soucieuses de l'ESG.",
+                crowdLabel: "Objectif / Fonds", supportBtn: "Soutenir",
+                revTitle: "Laisser un avis", revTextPlaceholder: "Écrivez votre avis et indiquez votre email pour être recontacté...", revSubmit: "Envoyer",
+                historyTitle: "Avis publics", rightH2: "État Actuel & Logistique Cartons",
+                l1Title: "Volume Boîtes Standard", l1Desc: "Consommation massive d'emballages standardisés non optimisés dans le secteur e-commerce.",
+                l2Title: "Espace Vide Cartons", l2Desc: "Les boîtes traditionnelles laissent de grands espaces vides remplis de plastique.",
+                l3Title: "Émissions CO2 Cartons", l3Desc: "Fort impact environnemental de la production et de l'élimination des cartons traditionnels.",
+                l4Title: "Efficacité Transport", l4Desc: "Moins de marchandises transportables par palette en raison des dimensions fixes.",
+                l5Title: "Coûts d'Emballage", l5Desc: "Dépense économique plus élevée pour l'achat de multiples formats de boîtes.",
+                footer: "&copy; 2026 ECO-PAK. Objectif : Accélérer le développement.",
+                reviewAlert: "Merci ! Votre avis a été publié.",
+                reviewAlreadyDone: "Vous avez déjà soumis un avis. Nous vous remercions pour votre contribution.",
+                cookieMsg: "Ce site utilise des cookies pour améliorer votre expérience. En cliquant sur \"Accepter\", vous consentez à leur utilisation. Vous pouvez refuser.",
+                cookieAccept: "Accepter",
+                cookieReject: "Refuser"
+            },
+            zh: {
+                chat: "在线聊天", greenBadge: "100% 智能绿色",
+                title: "ECO-PAK：智能包装与物流", subtitle: "仓储与物流的智能革命",
+                stat1: "📦 箱数 (年)", stat2: "☁️ 纸箱二氧化碳", leftH2: "优势与 ECO-PAK 数据",
+                v1Title: "减少纸箱", v1Desc: "得益于定制设计和消除空隙，预计可淘汰超过 4500 万个传统纸箱。",
+                v2Title: "满意用户", v2Desc: "买家和企业对 100% 可堆肥包装创新概念的超高满意度与热情反馈。",
+                v3Title: "环保优势", v3Desc: "认证的快速堆肥、78.5% 的节水率以及消除塑料废弃物扩散。",
+                v4Title: "结构优势", v4Desc: "围绕物品进行1:1量身定制成型，具备吸收冲击能量的高级防震保护。",
+                v5Title: "受众与企业", v5Desc: "来自电商、全球物流枢纽以及注重 ESG 声誉的高度关注。",
+                crowdLabel: "已筹集 / 目标", supportBtn: "立即支持",
+                revTitle: "留下评价", revTextPlaceholder: "写下您的评价并留下您的电子邮箱以便联系...", revSubmit: "提交",
+                historyTitle: "评价历史", rightH2: "现状与纸箱物流",
+                l1Title: "标准纸箱用量", l1Desc: "电子商务领域对未优化的标准化包装的大规模消耗。",
+                l2Title: "纸箱内部空隙", l2Desc: "传统纸箱留出大量空隙，需使用塑料填充物补充。",
+                l3Title: "纸箱碳排放", l3Desc: "传统纸箱在生产、切割和处置过程中产生的高环境影响。",
+                l4Title: "运输效率", l4Desc: "由于固定纸箱尺寸，单托盘可运输的货物量较少。",
+                l5Title: "包装成本", l5Desc: "购买多种规格纸箱及额外保护材料的经济支出较高。",
+                footer: "&copy; 2026 ECO-PAK. 目标：加速开发。",
+                reviewAlert: "谢谢！您的评价已发布。",
+                reviewAlreadyDone: "您已经提交过评价。感谢您的贡献。",
+                cookieMsg: "本网站使用技术和分析 cookie 来改善您的浏览体验。点击“接受”即表示您同意使用所有 cookie。您可以点击“拒绝”。",
+                cookieAccept: "接受",
+                cookieReject: "拒绝"
+            }
+        };
+
+        function showToast(message) {
+            const toast = document.getElementById('custom-toast');
+            const toastText = document.getElementById('toast-message-text');
+            toastText.innerText = message;
+            
+            toast.classList.remove('hidden');
+            void toast.offsetWidth; 
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 400);
+            }, 3500);
+        }
+
+        function updateCrowdDisplay() {
+            const formattedAmount = currentFundAmount.toLocaleString(currentLang === 'en' ? 'en-US' : 'it-IT');
+            const formattedTarget = targetFundAmount.toLocaleString(currentLang === 'en' ? 'en-US' : 'it-IT');
+            let amountText = currentLang === 'en' ? `$${formattedAmount} / $${formattedTarget}` : `${formattedAmount} € / ${formattedTarget} €`;
+            document.getElementById('txt-crowd-amount').innerText = amountText;
+            const percentage = Math.round((currentFundAmount / targetFundAmount) * 100);
+            document.getElementById('raised-pct').innerText = percentage + '%';
+            document.getElementById('progress-bar-fill-elem').style.width = percentage + '%';
+        }
+
+        function checkUserAlreadyReviewed() {
+            if (localStorage.getItem('eco_pak_has_reviewed')) {
+                const reviewFormElem = document.getElementById('review-form-element');
+                if (reviewFormElem) {
+                    reviewFormElem.innerHTML = `<p style="font-size: 0.7rem; color: #2ecc71; text-align: center; padding: 10px;">✅ ${translations[currentLang].reviewAlreadyDone}</p>`;
+                }
+            }
+        }
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.setAttribute('lang', lang);
+            const t = translations[lang];
+
+            document.getElementById('txt-chat').innerText = t.chat;
+            document.getElementById('txt-green-badge').innerText = t.greenBadge;
+            document.getElementById('txt-title').innerText = t.title;
+            document.getElementById('txt-subtitle').innerText = t.subtitle;
+            document.getElementById('txt-stat1').innerText = t.stat1;
+            document.getElementById('txt-stat2').innerText = t.stat2;
+            document.getElementById('txt-left-h2').innerText = t.leftH2;
+            document.getElementById('txt-v1-title').innerText = t.v1Title; document.getElementById('txt-v1-desc').innerText = t.v1Desc;
+            document.getElementById('txt-v2-title').innerText = t.v2Title; document.getElementById('txt-v2-desc').innerText = t.v2Desc;
+            document.getElementById('txt-v3-title').innerText = t.v3Title; document.getElementById('txt-v3-desc').innerText = t.v3Desc;
+            document.getElementById('txt-v4-title').innerText = t.v4Title; document.getElementById('txt-v4-desc').innerText = t.v4Desc;
+            document.getElementById('txt-v5-title').innerText = t.v5Title; document.getElementById('txt-v5-desc').innerText = t.v5Desc;
+            document.getElementById('txt-crowd-label').innerText = t.crowdLabel;
+            updateCrowdDisplay();
+            document.getElementById('txt-support-btn').innerText = t.supportBtn;
+            document.getElementById('txt-rev-title').innerText = t.revTitle;
+            
+            const textInputElem = document.getElementById('review-text');
+            if (textInputElem) {
+                textInputElem.placeholder = t.revTextPlaceholder;
+            }
+            
+            const submitBtnElem = document.getElementById('txt-rev-submit');
+            if (submitBtnElem) {
+                submitBtnElem.innerText = t.revSubmit;
+            }
+
+            document.getElementById('txt-history-title').firstChild.textContent = t.historyTitle + " ";
+            document.getElementById('txt-right-h2').innerText = t.rightH2;
+            document.getElementById('txt-l1-title').innerText = t.l1Title; document.getElementById('txt-l1-desc').innerText = t.l1Desc;
+            document.getElementById('txt-l2-title').innerText = t.l2Title; document.getElementById('txt-l2-desc').innerText = t.l2Desc;
+            document.getElementById('txt-l3-title').innerText = t.l3Title; document.getElementById('txt-l3-desc').innerText = t.l3Desc;
+            document.getElementById('txt-l4-title').innerText = t.l4Title; document.getElementById('txt-l4-desc').innerText = t.l4Desc;
+            document.getElementById('txt-l5-title').innerText = t.l5Title; document.getElementById('txt-l5-desc').innerText = t.l5Desc;
+            document.getElementById('txt-footer').innerHTML = t.footer;
+
+            document.getElementById('cookie-text-msg').innerText = t.cookieMsg;
+            document.getElementById('cookie-accept-btn').innerText = t.cookieAccept;
+            document.getElementById('cookie-reject-btn').innerText = t.cookieReject;
+            
+            checkUserAlreadyReviewed();
+        }
+
+        document.getElementById('lang-select').addEventListener('change', (e) => changeLanguage(e.target.value));
+
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('cookie-accept-btn');
+        const rejectBtn = document.getElementById('cookie-reject-btn');
+
+        if (localStorage.getItem('eco_pak_cookie_choice')) {
+            cookieBanner.classList.add('hidden');
+        }
+
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('eco_pak_cookie_choice', 'accepted');
+            cookieBanner.classList.add('hidden');
+        });
+
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('eco_pak_cookie_choice', 'rejected');
+            cookieBanner.classList.add('hidden');
+        });
+
+        let annualBoxesCount = 482910450;
+        let co2Count = 842.30;
+        
+        function updateLiveClocks() {
+            const now = new Date();
+            document.getElementById('tz-nz').innerText = now.toLocaleTimeString('it-IT', { timeZone: 'Pacific/Auckland' });
+            document.getElementById('tz-is').innerText = now.toLocaleTimeString('it-IT', { timeZone: 'Atlantic/Reykjavik' });
+            document.getElementById('tz-au').innerText = now.toLocaleTimeString('it-IT', { timeZone: 'Australia/Sydney' });
+        }
+
+        setInterval(() => {
+            annualBoxesCount += Math.floor(Math.random() * 45) + 15;
+            co2Count += (Math.random() * 0.08);
+            document.getElementById('header-annual-boxes').innerText = annualBoxesCount.toLocaleString('it-IT');
+            document.getElementById('header-co2').innerText = co2Count.toFixed(2) + " Ton";
+            updateLiveClocks();
+        }, 1000);
+
+        updateLiveClocks();
+
+        const reviewForm = document.getElementById('review-form-element');
+        const historyContainer = document.getElementById('history-list-container');
+        const reviewCounter = document.getElementById('review-counter');
+
+        async function fetchReviews() {
+            const { data, error } = await _supabase
+                .from('reviews')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) {
+                console.error('Errore nel caricamento delle recensioni:', error);
+                return;
+            }
+
+            historyContainer.innerHTML = '';
+            data.forEach(rev => {
+                let formattedDate = '';
+                if (rev.created_at) {
+                    const dateObj = new Date(rev.created_at);
+                    formattedDate = dateObj.toLocaleDateString('it-IT', { 
+                        day: '2-digit', month: '2-digit', year: 'numeric', 
+                        hour: '2-digit', minute: '2-digit' 
+                    });
+                }
+
+                const reviewTextContent = rev.author || rev.text || rev.feedback || 'Nessun testo specificato';
+
+                const item = document.createElement('div');
+                item.className = 'history-item';
+                item.innerHTML = `
+                    <div class="history-item-header">
+                        <span>⭐ ${rev.stars || '★★★★★'}</span> 
+                        <span style="font-size: 0.6rem; color: #95a5a6;">${formattedDate}</span>
+                    </div>
+                    <span class="history-item-text">“${escapeHtml(reviewTextContent)}”</span>
+                `;
+                historyContainer.appendChild(item);
+            });
+            reviewCounter.innerText = `(${data.length})`;
+        }
+
+        if (reviewForm) {
+            reviewForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                if (localStorage.getItem('eco_pak_has_reviewed')) {
+                    showToast(translations[currentLang].reviewAlreadyDone);
+                    return;
+                }
+
+                const textInput = document.getElementById('review-text').value.trim();
+                const starsInput = document.getElementById('review-stars').value;
+                
+                if (textInput) {
+                    const { error } = await _supabase
+                        .from('reviews')
+                        .insert([{ 
+                            author: textInput, 
+                            stars: starsInput, 
+                            text: textInput,
+                            feedback: textInput
+                        }]);
+
+                    if (error) {
+                        showToast(currentLang === 'en' ? "Error sending review." : "Errore durante l'invio della recensione.");
+                        console.error(error);
+                        return;
+                    }
+
+                    localStorage.setItem('eco_pak_has_reviewed', 'true');
+                    await fetchReviews();
+                    showToast(translations[currentLang].reviewAlert);
+                    checkUserAlreadyReviewed();
+                }
+            });
+        }
+
+        function escapeHtml(text) {
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        fetchReviews();
+        updateCrowdDisplay();
+    </script>
+</body>
+</html>
